@@ -67,17 +67,17 @@ font-size: 16px;
 </head>
 <body>
 <div class="container">
-<h2>إرسال رسالة</h2>
-<input type="text" id="phone" placeholder="أدخل رقم الهاتف (مثال: 770...)" />
-<button onclick="sendMessages()">إرسال</button>
-<div id="status" class="status">عدد الرسائل المرسلة: 0</div>
+<h2>سپامی ئاسیا لەلایەن یوسف الکردي</h2>
+<input type="text" id="phone" placeholder="ژمارەی موبایلەکەت داغڵکە بەم شێوە (نمونە: 770...)" />
+<button onclick="sendMessages()">ناردن</button>
+<div id="status" class="status"> ژمارەی نامەی نێردراو: 0</div>
 </div>
 
 <script>
 async function sendMessages() {
 let phone = document.getElementById("phone").value;
 let sent = 0;
-document.getElementById("status").innerText = "الرسائل قيد الإرسال...";
+document.getElementById("status").innerText = "نامەکان وا ئەنێردرێن...";
 
 while (true) {
 try {
@@ -92,9 +92,9 @@ let result = await response.json();
 
 if (result.message.includes("successfully")) {
 sent++;
-document.getElementById("status").innerText = `تم إرسال الرسالة بنجاح | العدد: ${sent}`;
+document.getElementById("status").innerText = `نامەکە بەسەرکەوتوی نێردرا کەم بنێرە با بەعایلەتا نەیەنە خوارەوە | ژمارە: ${sent}`;
 } else {
-document.getElementById("status").innerText = `خطأ في إرسال الرسالة | العدد: ${sent}`;
+document.getElementById("status").innerText = `غەڵەتێ ڕوید لەناردنی نامەکان | ژمارەی نامە: ${sent}`;
 break;
 }
 } catch (error) {
